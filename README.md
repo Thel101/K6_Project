@@ -4,8 +4,7 @@ This project contains load and API test scripts written for use with [k6](https:
 
 ## Project Structure
 
-- `aump.js` — k6 script for API testing, including checks for endpoints such as documents API.
-- `homepage.js` — k6 script for simulating user flows like login and dashboard access, with checks for HTTP status and HTML content.
+- `aump.js` — k6 script for simulating user flows like login and dashboard access, with checks for HTTP status and HTML content.
 - `summary.html` — Generated HTML report summarizing test results.
 
 ## How to Run Tests
