@@ -49,6 +49,6 @@ export default async function () {
 
 export function handleSummary(data) {
   return {
-    "browser-summary.html": htmlReport(data),
+    "../reports/browser-summary.html": htmlReport(data, { title: "Browser Performance Test Report" }),
   };
 }

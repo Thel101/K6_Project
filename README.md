@@ -7,9 +7,8 @@ This project contains load, browser UI, and API test scripts written for use wit
 ## Project Structure
 
 - `aump.js` — k6 script for API testing, including checks for endpoints such as documents API.
-- `homepage.js` — k6 script for simulating user flows like login and dashboard access, with checks for HTTP status and HTML content.
 - `dashboard.js` — k6 browser script for automating login and dashboard checks using real browser automation.
-- `summary.html` — Generated HTML report summarizing test results.
+- `report folder` — Generated HTML report summarizing test results.
 
 ## How to Run Tests
 
@@ -23,28 +22,26 @@ This project contains load, browser UI, and API test scripts written for use wit
      ```
      k6 run aump.js
      ```
-     or
-     ```
-     k6 run homepage.js
-     ```
 
 3. **Run a Browser Automation Script:**
    - Run a browser test with:
      ```
      k6 run --browser dashboard.js
      ```
-   - This will launch a real browser and automate UI actions as defined in the script.
+   - This will automate UI actions as defined in the script.
+
 
 4. **View Results:**
    - Test results will be shown in the terminal.
-   - An HTML summary report will be generated as `summary.html` if the script includes a `handleSummary` function with `htmlReport`.
+   - An HTML summary report will be generated in the `reports` folder as `summary.html` if the script includes a `handleSummary` function with `htmlReport`.
+   - If you run test scripts from the `tests` directory, the report will still be saved in the `../reports/` folder relative to the script location.
 
 ## Generating HTML Reports
 
 The scripts use the [k6-reporter](https://github.com/benc-uk/k6-reporter) to generate HTML reports. After running a script, open `summary.html` in your browser to view a detailed report.
 
 ## Notes
-- `aump.js` and `homepage.js` use HTTP requests directly and do not simulate browser interactions or JavaScript execution.
+- `aump.js` uses HTTP requests directly and do not simulate browser interactions or JavaScript execution.
 - `dashboard.js` uses k6 browser for real browser automation, including UI login and content checks.
 - For advanced UI or end-to-end testing, you can further customize selectors and flows in `dashboard.js`.
 

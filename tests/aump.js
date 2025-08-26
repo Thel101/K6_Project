@@ -56,7 +56,7 @@ export default function () {
 }
 export function handleSummary(data) {
   return {
-    "summary.html": htmlReport(data, { title: "My K6 Test Report" }),
+    "../reports/summary.html": htmlReport(data, { title: "Protocol Performance Test Report" }),
     "stdout": textSummary(data, { indent: " ", enableColors: true }),
   };
 }
